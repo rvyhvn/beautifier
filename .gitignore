@@ -1,0 +1,15 @@
+# Junks
+*.pyc
+__pycache__/
+*.pyo
+*.pyc
+
+.env
+
+# Assets
+staticfiles/
+media/
+
+# Logs and backups
+*.log
+*.bak
