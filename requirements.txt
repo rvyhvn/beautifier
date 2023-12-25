@@ -8,6 +8,7 @@ idna==3.6
 inertia-django==0.5.3
 marshmallow==3.20.1
 packaging==23.2
+Pillow==10.1.0
 python-dotenv==1.0.0
 requests==2.31.0
 sqlparse==0.4.4
