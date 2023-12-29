@@ -1,9 +1,7 @@
 from django.db import models
 
 from products.models import AppModel, Product
-from users.models import User
-
-# from users.models import User
+from users.models import CustomUser
 
 
 class Order(AppModel):
@@ -50,9 +48,13 @@ class Order(AppModel):
     order_status = models.CharField(
         max_length=30,
         choices=ORDER_STATUS_LIST,
-        default="",
+
     )
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(
+        CustomUser,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
 
     def __str__(self):
         return f"{self.id}. {self.order_total_price} | {self.order_status}"
@@ -60,11 +62,17 @@ class Order(AppModel):
 
 class OrderItem(AppModel):
     order_item_total = models.IntegerField()
-    order_price_per_pcs = (
-        models.IntegerField()
-    )  # TODO: search the compatible field for price per pieces in context order items for order model
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
+    # TODO: search the compatible field for price per pieces in context order items for order model
+    order_price_per_pcs = models.IntegerField()
+    product_id = models.OneToOneField(
+        Product,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+    order_id = models.ForeignKey(
+        Order,
+        on_delete=models.CASCADE,
+    )
 
     def __str__(self):
-        return f"{self.id}. {self.order_item_total}"
+        return f"{self.id}. Item total = {self.order_item_total} | Product: {self.product_id}"
