@@ -1,6 +1,6 @@
 <template>
   <div class="products-index">
-    <h1 class="text-3xl">Product List</h1>
+    <h1 class="text-3xl underline">Product List</h1>
     <ul>
       <li v-for="product in products">
         <h2 class="text-2xl"><a :href="`/products/show/${product.id}`">{{product.name}}</a></h2>

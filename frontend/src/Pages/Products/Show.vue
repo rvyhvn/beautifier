@@ -1,6 +1,6 @@
 <template>
   <div class="product-details">
-    <h1 class="text-3xl">Product Details</h1>
+    <h1 class="text-3xl underline">Product Detail</h1>
     <div v-if="product">
       <h2 class="text-2xl">{{ product.name }}</h2>
       <p>{{product.description}}</p>
