@@ -12,10 +12,7 @@ class ProductsIndexView(View):
         products = Product.objects.all()
         product_schema = ProductSchema(many=True)
         props = {"products": product_schema.dump(products)}
-        # props = {
-        #     "products": products,
-        # }
-        return render(request, "Products/Index", props)
+        return render(request, "Products/IndexProduct", props)
 
     def post(self, request):
         pass
@@ -26,15 +23,24 @@ class ProductsShowView(View):
         product_detail = Product.objects.get(pk=pk)
         product_schema = ProductSchema()
         props = {"product_detail": product_schema.dump(product_detail)}
-        return render(request, "Products/Show", props)
+        return render(request, "Products/ShowProduct", props)
 
     def post(self, request, *args, **kwargs):
         pass
 
 
 class ProductsCreateView(View):
-    pass
+    def get(self, request, *args, **kwargs):
+        pass
+
+    def post(self, request, *args, **kwargs):
+        pass
 
 
 class ProductsEditView(View):
-    pass
+    def get(self, request, pk, *args, **kwargs):
+        pass
+
+    # TODO: find the right params for post method below.
+    def post(self, request, *args, **kwargs):
+        pass
