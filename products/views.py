@@ -19,6 +19,12 @@ class ProductsIndexView(View):
 
 
 class ProductsShowView(View):
+    def get(self, request, pk, *args, **kwargs):
+        product_detail = Product.objects.get(pk=pk)
+        props = {"product_detail": product_detail}
+        return render(request, "Products/Show", props)
+
+    # OLD
     # def get(self, request, *args, **kwargs):
     #     product_id = kwargs.get("product_id")
     #     print(product_id)

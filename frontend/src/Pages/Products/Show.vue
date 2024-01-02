@@ -1,8 +1,11 @@
 <template>
   <div class="product-details">
-    <h1>Product Details</h1>
+    <h1 class="text-3xl">Product Details</h1>
     <div v-if="product">
-      <h2>{{ product }}</h2>
+      <h2 class="text-2xl">{{ product.name }}</h2>
+      <p>{{product.description}}</p>
+      <h3 class="text-xl">Price: {{product.price}}</h3>
+      <h3 class="text-xl">Stock: {{product.stock}}</h3>
     </div>
     <p v-else>Loading...</p>
   </div>
@@ -11,7 +14,8 @@
 <script setup>
 import { usePage } from "@inertiajs/vue3";
 const { props } = usePage();
-const product = props.product_name
+const product = props.product_detail;
+console.log(product);
 </script>
 
 <style>
