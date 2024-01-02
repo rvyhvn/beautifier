@@ -3,8 +3,8 @@
     <h1 class="text-3xl">Product List</h1>
     <ul>
       <li v-for="product in products">
-        <h2 class="text-2xl"><a :href="`/products/show/${product.id}`">{{product.product_name}}</a></h2>
-        <p>{{product.product_description}}</p>
+        <h2 class="text-2xl"><a :href="`/products/show/${product.id}`">{{product.name}}</a></h2>
+        <p>{{product.description}}</p>
       </li>
 
     </ul>
