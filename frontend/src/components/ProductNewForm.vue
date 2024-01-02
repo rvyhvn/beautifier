@@ -1,15 +1,18 @@
 <template>
 <form @submit.prevent="form.post('/products/new')">
 	<!-- email -->
-	<input type="text" v-model="form.email">
-	<div v-if="form.errors.email">{{ form.errors.email }}</div>
+	<input type="text" v-model="form.name">
+	<div v-if="form.errors.name">{{ form.errors.name }}</div>
 	<!-- password -->
-	<input type="password" v-model="form.password">
-	<div v-if="form.errors.password">{{ form.errors.password }}</div>
+	<input type="text" v-model="form.description">
+	<div v-if="form.errors.description">{{ form.errors.description }}</div>
 	<!-- remember me -->
-	<input type="checkbox" v-model="form.remember"> Remember Me
+	<input type="text" v-model="form.price">
+	<div v-if="form.errors.price">{{ form.errors.price }}</div>
+		<input type="text" v-model="form.stock">
+	<div v-if="form.errors.stock">{{ form.errors.stock }}</div>
 	<!-- submit -->
-	<button type="submit" :disabled="form.processing">Login</button>
+	<button type="submit" :disabled="form.processing">Submit</button>
 </form>
 </template>
 
@@ -17,9 +20,10 @@
 import { useForm } from '@inertiajs/vue3'
 
 const form = useForm({
-  email: null,
-  password: null,
-  remember: false,
+  name: null,
+  description: null,
+  price: null,
+  stock: null,
 })
 
 </script>
