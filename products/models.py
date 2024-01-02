@@ -25,7 +25,7 @@ class Product(AppModel):
     product_description = models.TextField()
     product_price = models.IntegerField(null=True, blank=True)
     product_stock = models.IntegerField(null=True, blank=True)
-    product_image = models.ImageField(null=True, blank=True)
+    # product_image = models.ImageField(null=True, blank=True)
     category_id = models.ForeignKey(
         Category,
         null=True,
