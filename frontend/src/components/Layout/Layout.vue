@@ -82,6 +82,6 @@
   </footer>
 </template>
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 const currentYear = ref(new Date().getFullYear());
 </script>
