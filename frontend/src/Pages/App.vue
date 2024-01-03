@@ -1,8 +1,5 @@
 <template>
-  <header>
-    <Layout />
-  </header>
-  <main>
+  <Layout>    
     <div class="container border mx-auto">
       <div class="grid-rows-8">
         <div class="size-24">Banner</div>
@@ -15,8 +12,7 @@
         <div class="size-24">Latest (instagram contents)</div>
       </div>
     </div>
-    <IndexProduct />
-  </main>
+  </Layout>
 </template>
 <script setup>
 import { usePage } from '@inertiajs/vue3';
