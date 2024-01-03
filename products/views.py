@@ -11,7 +11,12 @@ class ProductsIndexView(View):
     def get(self, request, *args, **kwargs):
         products = Product.objects.all()
         product_schema = ProductSchema(many=True)
-        props = {"products": product_schema.dump(products)}
+        user_info = request.user.username
+
+        props = {
+            "products": product_schema.dump(products),
+            "user_info": user_info,
+        }
         return render(request, "Products/IndexProduct", props)
 
     def post(self, request):
