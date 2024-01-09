@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from ..products.models import Product
 from core.models import AppModel
-from ..users.models import CustomUser
+from ..users.models import UserProfile
 
 
 class Order(AppModel):
@@ -51,7 +52,7 @@ class Order(AppModel):
         choices=STATUS_LIST,
     )
     user_id = models.ForeignKey(
-        CustomUser,
+        User,
         null=True,
         on_delete=models.SET_NULL,
     )
