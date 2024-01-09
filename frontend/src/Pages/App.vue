@@ -1,47 +1,25 @@
-<script setup>
-import HelloWorld from '../components/HelloWorld.vue'
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="../assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <Layout>    
+    <div class="container border mx-auto">
+      <div class="grid-rows-8">
+        <div class="size-24">Banner</div>
+        <div class="size-24">Recommended</div>
+        <div class="size-24">Show case</div>
+        <div class="size-24">Best sellers</div>
+        <div class="size-24">Advantages</div>
+        <div class="size-24">Comments from buyers</div>
+        <div class="size-24">As seen in</div>
+        <div class="size-24">Latest (instagram contents)</div>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </Layout>
 </template>
+<script setup>
+import { usePage } from '@inertiajs/vue3';
+import IndexProduct from './Products/IndexProduct.vue';
+import Layout from '@/components/Layout/Layout.vue';
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+const { props } = usePage();
+const products = props.products;
+console.log(products);
+</script>

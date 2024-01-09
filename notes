@@ -1,0 +1,8 @@
+#!/bin/bash
+
+directory_path="./"
+
+find "$directory_path" \
+  -type d \( -name "node_modules" -o -name ".venv" \) -prune -false -o \
+  -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o -name "*.py" -o -name "*.html" -o -name "*.css" -o -name "*.vue" \) \
+  -exec grep -rnEI --color=always -e "TODO|FIXME|HACK|XXX|BUG|OPTIMIZE" {} +
