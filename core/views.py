@@ -1,6 +1,6 @@
 from django.views import View
 from inertia import render
-from products.views import Product
+from apps.products.models import Product
 
 
 class AppView(View):

@@ -7,7 +7,7 @@ from .views import AppView
 
 urlpatterns = [
     path("", AppView.as_view(), name="app"),
-    path("products/", include("products.urls")),
+    path("products/", include("apps.products.urls")),
     # TODO: add more applications url when it's already configured.
     path("admin/", admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
