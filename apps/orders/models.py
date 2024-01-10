@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 from ..products.models import Product
 from core.models import AppModel
-from ..users.models import UserProfile
 
 
 class Order(AppModel):

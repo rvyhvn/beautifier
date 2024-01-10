@@ -1,8 +1,8 @@
 <template>
-  <Layout>    
+  <Layout>
     <div class="container border mx-auto">
       <div class="grid-rows-8">
-        <h3>{{property}}</h3>
+        <h3>{{ property }}</h3>
       </div>
     </div>
   </Layout>
